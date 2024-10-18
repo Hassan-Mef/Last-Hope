@@ -7,15 +7,15 @@
 int main()
 {
     // Window size and grid parameters
-    const int windowWidth = 384;   // 12 columns * 16 tile size
-    const int windowHeight = 320;  // 10 rows * 16 tile size
-    const int tileSize = 32;       // Each tile is 16x16 pixels
+    const int windowWidth = 384;   // 12 columns * 32 tile size
+    const int windowHeight = 320;  // 10 rows * 32 tile size
+    const int tileSize = 32;       // Each tile is 32*32 pixels
 
     // Create the SFML window
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Tilemap Grid Example");
 
     // Create the grid with 10 rows, 12 columns, and 16x16 tile size
-    Grid grid(10, 12, tileSize);
+    Grid grid(10, 12, tileSize, "textures/grass.png");
 
     // Game loop
     while (window.isOpen()) {

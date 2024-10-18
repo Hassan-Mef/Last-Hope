@@ -12,9 +12,11 @@ class Grid
 {
 	private:
 		int rows, cols, tileSize;
-		vector<sf::RectangleShape> tiles;
+		sf::Texture tileTexture;
+		vector<sf::RectangleShape> tiles;    
+		//vector<int> tileTypes;
 	public:
-		Grid(int rows, int cols, int tileSize);
+		Grid(int rows, int cols, int tileSize, const std::string& texturePath);
 		void draw(sf::RenderWindow& window);
 		void handleClick(const sf::Vector2i& mousePos);
 

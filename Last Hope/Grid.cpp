@@ -1,28 +1,42 @@
 #include "Grid.h"
 
-Grid::Grid(int rows, int cols, int tileSize)
-{
-	this->rows = rows;
-	this->cols = cols;
-	this->tileSize = tileSize;
-
-	tiles.resize(rows *cols);
-
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            int index = i * cols + j;  // Convert (i, j) to 1D index
-
-            tiles[index].setSize(sf::Vector2f(tileSize, tileSize));
-            tiles[index].setPosition(j * tileSize, i * tileSize);
-
-            
-            tiles[index].setOutlineThickness(1);
-            tiles[index].setOutlineColor(sf::Color::White);
-            tiles[index].setFillColor(sf::Color::Transparent);
-        }
+Grid::Grid(int rows, int cols, int tileSize, const std::string& texturePath)
+    : rows(rows), cols(cols), tileSize(tileSize) {
+    // Load the tileset texture
+    if (!tileTexture.loadFromFile(texturePath)) {
+        std::cerr << "Error: Could not load texture from " << texturePath << "\n";
+        return;
     }
 
+    // Initialize the tiles and tile types
+    tiles.resize(rows * cols);
+  //  tileTypes.resize(rows * cols);  // Randomly assign types for now
 
+    for (int row = 0; row < rows; ++row) {
+        for (int col = 0; col < cols; ++col) {
+            int index = row * cols + col;
+
+            // Initialize the tile shape and position
+            tiles[index].setSize(sf::Vector2f(tileSize, tileSize));
+            tiles[index].setPosition(col * tileSize, row * tileSize);
+
+            // Assign a random tile type (0 = grass, 1 = tree, etc.)
+           // tileTypes[index] = rand() % (13 * 12);  // Random tile from the tileset
+
+            // Calculate the texture rectangle (IntRect) based on the tile type
+            //int tilesetRow = tileTypes[index] / 13;  // Get the row in the tileset
+            //int tilesetCol = tileTypes[index] % 13;  // Get the column in the tileset
+
+           // int tilesetRow = 11;
+           // int tilesetCol = 1;
+
+            // Assign the texture and texture rectangle
+            tiles[index].setTexture(&tileTexture);
+           // tiles[index].setTextureRect(
+               // sf::IntRect(tilesetCol * tileSize, tilesetRow * tileSize, tileSize, tileSize)
+           // );
+        }
+    }
 }
 
 void Grid::draw(sf::RenderWindow& window)
