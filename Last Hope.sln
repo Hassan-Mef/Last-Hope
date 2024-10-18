@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Last Hope", "Last Hope\Last Hope.vcxproj", "{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}.Debug|x64.ActiveCfg = Debug|x64
+		{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}.Debug|x64.Build.0 = Debug|x64
+		{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}.Debug|x86.ActiveCfg = Debug|Win32
+		{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}.Debug|x86.Build.0 = Debug|Win32
+		{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}.Release|x64.ActiveCfg = Release|x64
+		{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}.Release|x64.Build.0 = Release|x64
+		{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}.Release|x86.ActiveCfg = Release|Win32
+		{4B96BA91-6CD6-46E6-A6E3-7F3103F76478}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65CBC4AB-722D-4772-9E7F-B5AB05D08FCA}
+	EndGlobalSection
+EndGlobal
