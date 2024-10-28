@@ -139,7 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Editor\MapEditor.cpp" />
     <ClCompile Include="Last Hope.cpp" />
+    <ClCompile Include="Map\Grid.cpp" />
+    <ClCompile Include="Map\Map.cpp" />
+    <ClCompile Include="Map\Tile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Editor\MapEditor.h" />
+    <ClInclude Include="Map\Grid.h" />
+    <ClInclude Include="Map\Map.h" />
+    <ClInclude Include="Map\Tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
