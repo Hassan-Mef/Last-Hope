@@ -14,7 +14,7 @@ int Grid::getTileIndex(int row, int col)
 
 sf::Vector2f Grid::getTilePosition(int row, int col)
 {
-	float x = col * tileSize;
+	float x = col * tileSize + tileSize;
 	float y = row * tileSize;
 	return sf::Vector2f(x, y);
 }

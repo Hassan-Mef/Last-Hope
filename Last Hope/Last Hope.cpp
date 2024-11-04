@@ -8,17 +8,20 @@
 int main()
 {
     // Window size and grid parameters
-    const int windowWidth = 416;   // 12 columns * 32 tile size
-    const int windowHeight = 384;  // 10 rows * 32 tile size
+    const int windowWidth = 384;   // 12 columns * 32 tile size
+    const int windowHeight = 426;  // 10 rows * 32 tile size
     const int tileSize = 32;       // Each tile is 32x32 pixels
 
     // Create the SFML window
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Tilemap Grid Example");
 
+    
+    /*
     std::map<int, std::string> texturePaths = {
         {0, "textures/bg.png"},
         {1, "textures/grass.png"},
-        {2, "textures/rock.png"}
+        {2, "textures/rock.png"},
+		{3, "textures/foilage.png"}
         // Add more textures as needed
     };
 
@@ -26,6 +29,7 @@ int main()
     Grid grid(10, 12, tileSize);
     Map map(grid, texturePaths);
     MapEditor editor(grid, map);
+    */
 
     // Game loop
     while (window.isOpen()) {
@@ -36,18 +40,25 @@ int main()
                 window.close();
 
             // Handle all inputs through MapEditor
-            editor.handleInput(event, window);  // Pass event and window to MapEditor
+          //  editor.handleInput(event, window);  // Pass event and window to MapEditor
         }
+
+
+        
 
         // Clear the window with a black background
         window.clear(sf::Color::Black);
 
         // Draw the map and editor overlay
-        editor.draw(window);
+       // editor.draw(window);
+
+      //  window.draw(text);
 
         // Display the rendered frame
         window.display();
     }
+
+   // editor.saveMapToFile("MapData/map_1.json");
 
     return 0;
 }

@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "SFML/Graphics.hpp"
 #include "../nlohmann/json.hpp"
 #include "../Map/Grid.h"
@@ -13,7 +14,6 @@
 
 using json = nlohmann::json;
 using namespace std;
-using namespace sf;
 
 
 class MapEditor
@@ -23,6 +23,8 @@ private:
     Map& map;    // Reference to the map for managing tiles
     int selectedTileType;  // The current tile type selected by the editor for "painting"
     string mapFilePath;  // The file path of the map being edited
+	sf::Font font; // The font
+    sf::RectangleShape SelectedTexture;
 
 public:
     MapEditor(Grid& grid, Map& map);   // Constructor
@@ -42,6 +44,18 @@ public:
 
     // Render UI
     void draw(sf::RenderWindow& window);
+	void drawUI(sf::RenderWindow& window);
+
+	// Helper functions
+    sf::RectangleShape getSelectedTexture()
+    {
+
+    }
+    void setSelectedTexture(sf::RectangleShape temp)
+    {
+        this->SelectedTexture = temp;
+
+    }
 
 
 
