@@ -24,7 +24,8 @@ private:
     int selectedTileType;  // The current tile type selected by the editor for "painting"
     string mapFilePath;  // The file path of the map being edited
 	sf::Font font; // The font
-    sf::RectangleShape SelectedTexture;
+    sf::RectangleShape SelectedTexture;  
+    sf::RectangleShape saveButton;
 
 public:
     MapEditor(Grid& grid, Map& map);   // Constructor
@@ -55,6 +56,10 @@ public:
     {
         this->SelectedTexture = temp;
 
+    }
+    sf::Vector2f get_saveButtonCoord()
+    {
+        return this->saveButton.getPosition();
     }
 
 

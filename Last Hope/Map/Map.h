@@ -6,8 +6,12 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <fstream>
+#include "../nlohmann/json.hpp"
 
 
+using json = nlohmann::json;
+using namespace std;
 
 
 class Map
@@ -24,6 +28,8 @@ public:
 
 	void draw(sf::RenderWindow& window);
 	void handleClick(const sf::Vector2i& mousePos);
+
+	void loadMap(const string& filename);
 
 };
 
