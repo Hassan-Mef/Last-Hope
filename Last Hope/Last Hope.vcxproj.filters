@@ -22,6 +22,12 @@
     <Filter Include="Source Files\Map">
       <UniqueIdentifier>{93fe81e7-9892-4853-8677-60d7fb5821f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Enemy">
+      <UniqueIdentifier>{f798bb80-ec8e-44f5-8947-baca85edd0b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Enemy">
+      <UniqueIdentifier>{2d234d75-1d78-4fa7-8dd4-d8e812ae6cfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Last Hope.cpp">
@@ -52,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="Map\Tile.h">
       <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemies\Enemy.h">
+      <Filter>Header Files\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
