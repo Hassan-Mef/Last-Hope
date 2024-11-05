@@ -119,13 +119,14 @@ void MapEditor::drawUI(sf::RenderWindow& window) {
     window.draw(text);
 
     std::map<int, std::string> UI_texture = {
-       {0, "textures/grass.png"},
-       {1, "textures/rock.png"},
-       {2, "textures/foilage.png"}
+       {0, "assets/textures/bg.png"},
+        {1, "assets/textures/grass.png"},
+        {2, "assets/textures/rock.png"},
+        {3, "assets/textures/foilage.png"}
     };
 
     sf::Texture selectedTextureFile;
-    if (selectedTextureFile.loadFromFile(UI_texture[this->selectedTileType - 1])) {
+    if (selectedTextureFile.loadFromFile(UI_texture[this->selectedTileType ])) {
         SelectedTexture.setTexture(&selectedTextureFile);
         SelectedTexture.setPosition(180, 660);  // Adjusted for new scaling
         window.draw(SelectedTexture);
@@ -150,7 +151,7 @@ void MapEditor::drawUI(sf::RenderWindow& window) {
         textures_UI_box[i].setSize(sf::Vector2f(64, 64));  // 64x64 for UI texture boxes
         textures_UI_box[i].setPosition(880, 0 + i * 66);  // Adjusted position for 64x64 scaling
         text.setPosition(860, 0 + i * 66);
-        text.setString(to_string(i + 1));
+        text.setString(to_string(i));
         window.draw(text);
 
         sf::Texture texture;

@@ -14,30 +14,33 @@ int main()
     const int windowHeight = (10 * tileSize) +120;  // Adjusted for 10 rows of 64 pixels each
 
     // Create the SFML window
-    sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Tilemap Grid Example");
+    sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Last Hope");
 
     std::map<int, std::string> texturePaths = {
-        {0, "textures/bg.png"},
-        {1, "textures/grass.png"},
-        {2, "textures/rock.png"},
-        {3, "textures/foilage.png"}
+        {0, "assets/textures/bg.png"},
+        {1, "assets/textures/grass.png"},
+        {2, "assets/textures/rock.png"},
+        {3, "assets/textures/foilage.png"}
     };
 
     // Create the grid with 10 rows, 12 columns, and 64x64 tile size
     Grid grid(10, 12, tileSize);
     Map map(grid, texturePaths);
-    MapEditor editor(grid, map);
+	map.loadMap("MapData/map_1.json");
+     //MapEditor editor(grid, map);
 
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                window.close();
-            editor.handleInput(event, window);
+         //  editor.handleInput(event, window);
         }
 
         window.clear(sf::Color::Black);
-        editor.draw(window);
+        map.draw(window);
+
+      //  editor.draw(window);
         window.display();
     }
 

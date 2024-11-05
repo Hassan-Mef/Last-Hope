@@ -4,8 +4,6 @@ Map::Map(Grid& grid, const map<int,string>& texturePaths ) : grid(grid)
 {
 	map<int, string> temp;
 	
-
-
 	// Load the tileset image
 	for (const auto& temp : texturePaths) {
 		sf::Texture texture;
@@ -55,8 +53,34 @@ void Map::handleClick(const sf::Vector2i& mousePos)
 	{
 		tiles[tileIndex].setColor({ 255, 2, 2 });
 	}
+}
 
+void Map::loadMap(const string& filename) {
+	json data;
+	ifstream inputFile(filename);
+	if (!inputFile.is_open()) {
+		throw runtime_error("Failed to open map file");
+		return;
+	}
+	inputFile >> data;
+	inputFile.close();
 
+	int rows = data["rows"];
+	int cols = data["cols"];
+	int tileSize = data["tileSize"];
 
+	// Resize tiles vector to match the map dimensions
+	tiles.resize(rows * cols);
 
+	// Iterate over saved tile types and apply textures
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			int index = grid.getTileIndex(i, j);
+			int tileType = data["tiles"][index];
+			if (textures.find(tileType) != textures.end()) {
+				tiles[index].setType(tileType, textures[tileType]);
+				tiles[index].setPosition(grid.getTilePosition(i, j));
+			}
+		}
+	}
 }
