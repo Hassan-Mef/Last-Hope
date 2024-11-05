@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Editor\MapEditor.h" />
+    <ClInclude Include="Enemies\Enemy.h" />
     <ClInclude Include="Map\Grid.h" />
     <ClInclude Include="Map\Map.h" />
     <ClInclude Include="Map\Tile.h" />
