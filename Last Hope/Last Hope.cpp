@@ -26,18 +26,19 @@ int main()
     // Create the grid with 10 rows, 12 columns, and 64x64 tile size
     Grid grid(10, 12, tileSize);
     Map map(grid, texturePaths);
-    MapEditor editor(grid, map);
+    //map.loadMap("MapData/map_1.json");
+   // MapEditor editor(grid, map);
 
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                window.close();
-            editor.handleInput(event, window);
+            //editor.handleInput(event, window);
         }
 
         window.clear(sf::Color::Black);
-        editor.draw(window);
+        //editor.draw(window);
         window.display();
     }
 

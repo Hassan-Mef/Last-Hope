@@ -41,6 +41,11 @@ void Map::setTileType(int row, int col, int type) {
 }
 void Map::draw(sf::RenderWindow& window)
 {
+	// Render the base 
+
+
+
+	// rendering the tiles
 	for (auto& tile : tiles)
 		window.draw(tile);
 }

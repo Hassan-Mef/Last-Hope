@@ -141,12 +141,14 @@
   <ItemGroup>
     <ClCompile Include="Editor\MapEditor.cpp" />
     <ClCompile Include="Last Hope.cpp" />
+    <ClCompile Include="Map\Base.cpp" />
     <ClCompile Include="Map\Grid.cpp" />
     <ClCompile Include="Map\Map.cpp" />
     <ClCompile Include="Map\Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Editor\MapEditor.h" />
+    <ClInclude Include="Map\Base.h" />
     <ClInclude Include="Map\Grid.h" />
     <ClInclude Include="Map\Map.h" />
     <ClInclude Include="Map\Tile.h" />
