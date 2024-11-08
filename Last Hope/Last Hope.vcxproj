@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Editor\MapEditor.cpp" />
+    <ClCompile Include="Enemies\Enemy.cpp" />
     <ClCompile Include="Last Hope.cpp" />
     <ClCompile Include="Map\Grid.cpp" />
     <ClCompile Include="Map\Map.cpp" />
